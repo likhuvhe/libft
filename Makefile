@@ -1,6 +1,6 @@
 NAME	= libft.a
 
-SRC	= ft_memset.c ft_bzero.c 
+SRC	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c test.c 
 
 OBJ	= $(SRC:.c=.o)
 CFLAGS	= -Wall -Wextra -Werror
