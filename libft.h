@@ -6,14 +6,13 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:02:56 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/21 11:52:19 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/05/21 13:55:12 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define HEADER_H
-
-#include <string.h>
+# define LIBFT_H
+# include <string.h>
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
@@ -23,5 +22,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dst, const char *src);
+char	*ft_strncpy(char *dst, const char *src, size_t n);
 
 #endif
