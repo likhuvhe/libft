@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_istolower.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 12:28:29 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/23 15:53:41 by lkhuvhe          ###   ########.fr       */
+/*   Created: 2019/05/23 13:23:12 by lkhuvhe           #+#    #+#             */
+/*   Updated: 2019/05/23 14:42:13 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+int		ft_tolower(int c)
 {
-	size_t		i;
-
-	i = 0;
-	while (n > i && src[i] != '\0')
+	c = (unsigned char)c;
+	if ((c >= 'A' && c <= 'Z'))
 	{
-		dst[i] = src[i];
-		i++;
-	}
-	return (dst);
+		c = (c + 32);
+	}	
+	return (c);
 }
