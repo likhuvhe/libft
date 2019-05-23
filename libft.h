@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:02:56 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/23 10:31:13 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/05/23 12:14:47 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
+int		ft_isprint(int c);
 
 #endif
