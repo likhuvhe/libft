@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 09:01:42 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/24 14:03:51 by lkhuvhe          ###   ########.fr       */
+/*   Created: 2019/05/24 14:42:44 by lkhuvhe           #+#    #+#             */
+/*   Updated: 2019/05/24 15:54:57 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ift_memcmp(const void *s1, const void *s2, size_t n)
+char *ft_strncat(char *s1, const char *s2, size_t n)
 {
-	char			*cmp1;
-	char			*cmp2;
-	unsigned int	i;
+	int i;
+	int j;
 
 	i = 0;
-	cmp1 = (char*)s1;
-	cmp2 = (char*)s2;
-	while (n > i)
+	while (s1[i] != '\0')
 	{
-		if (cmp1[i] != cmp2[i])
-		{
-			return (cmp1[i] - cmp2[i]);
-		}
 		i++;
 	}
-	return (0);
+	j = 0;
+	while (n > j && s2[j] != '\0')
+	{
+		s1[i++] = s2[j++];
+	}
+	return (s1);
 }
