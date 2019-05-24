@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:02:56 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/23 17:51:26 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/05/24 10:45:58 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strncpy(char *dst, const char *src, size_t n);
-char	*ft_strcat(char *restrict s1, const char *restrict s2);
+char	*ft_strcat(char *s1, const char *s2);
 int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
