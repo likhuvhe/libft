@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 12:28:29 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/23 15:53:41 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/05/27 16:07:45 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 		dst[i] = src[i];
 		i++;
 	}
+	while (i < n)
+		dst[i++] = '\0';
 	return (dst);
 }

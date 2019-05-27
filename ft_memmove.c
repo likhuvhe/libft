@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 10:18:53 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/20 13:06:54 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/05/27 17:02:15 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	to = (char*)dst;
 	if ((to <= from) || (to >= (from + n)))
 	{
-		/* non-overlapping buffer*/
 		while (n-- > 0)
 		{
 			*(to++) = *(from++);
@@ -29,9 +28,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	else
 	{
-		/* overlapin buffer */
-		from = (char*)src + n;
-		to = (char*)dst + n;
+		from = (char*)src + n - 1;
+		to = (char*)dst + n - 1;
 		while (n-- > 0)
 		{
 			*(to--) = *(from--);
