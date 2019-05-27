@@ -19,12 +19,23 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	from = (char*)src;
 	to = (char*)dst;
-	while (n > 0)
+	if ((to <= from) || (to >= (from + n)))
 	{
-		*to = *from;
-		to++;
-		from++;
-		n--;
+		/* non-overlapping buffer*/
+		while (n-- > 0)
+		{
+			*(to++) = *(from++);
+		}
+	}
+	else
+	{
+		/* overlapin buffer */
+		from = (char*)src + n;
+		to = (char*)dst + n;
+		while (n-- > 0)
+		{
+			*(to--) = *(from--);
+		}
 	}
 	return (dst);
 }
