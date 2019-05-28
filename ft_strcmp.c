@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 09:01:42 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/28 11:35:43 by lkhuvhe          ###   ########.fr       */
+/*   Created: 2019/05/28 09:38:48 by lkhuvhe           #+#    #+#             */
+/*   Updated: 2019/05/28 11:30:15 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned char	*cmp1;
-	unsigned char	*cmp2;
-	unsigned int	i;
+	int				i;
+	unsigned char	*comp1;
+	unsigned char	*comp2;
 
+	comp1 = (unsigned char*)s1;
+	comp2 = (unsigned char*)s2;
 	i = 0;
-	cmp1 = (unsigned char*)s1;
-	cmp2 = (unsigned char*)s2;
-	while (n--)
+	while ((comp1[i] != '\0') && (comp2[i] != '\0'))
 	{
-		if (cmp1[i] != cmp2[i])
+		if (comp1[i] != comp2[i])
 		{
-			return (cmp1[i] - cmp2[i]);
+			return (comp1[i] - comp2[i]);
 		}
 		i++;
 	}
+	if (comp1[i] == '\0' && comp2[i] != '\0')
+		return (comp1[i] - comp2[i]);
+	if (comp2[i] == '\0' && comp1[i] != '\0')
+		return (comp1[i] - comp2[i]);
 	return (0);
 }
