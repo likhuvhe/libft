@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 13:01:10 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/28 15:19:48 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/05/29 15:21:59 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (n--)
 	{
+		if (!(comp1[i] || comp2[i]))
+			break ;
 		if (comp1[i] != comp2[i])
 		{
 			return (comp1[i] - comp2[i]);
