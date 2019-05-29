@@ -15,18 +15,14 @@
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	unsigned int i;
-	unsigned int j;
+	unsigned int l;
 
 	i = 0;
-	while (s1[i] != '\0')
+	l = ft_strlen(s1);
+	while (n-- > 0 && s2[i] != '\0')
 	{
-		i++;
+		s1[l++] = s2[i++];
 	}
-	j = 0;
-	while (n-- && s2[j] != '\0')
-	{
-		s1[i++] = s2[j++];
-	}
-	s1[i] = '\0';
+	s1[l] = '\0';
 	return (s1);
 }
