@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 11:49:50 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/31 12:22:32 by lkhuvhe          ###   ########.fr       */
+/*   Created: 2019/05/31 09:26:58 by lkhuvhe           #+#    #+#             */
+/*   Updated: 2019/05/31 10:21:13 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	*ft_memalloc(size_t size)
 {
-	if (s)
-	ft_putstr(s);
-	ft_putchar('\n');
+	void *p;
+
+	p = (void *)malloc(size * sizeof(size_t));
+	if (!p)
+		return (NULL);
+	ft_bzero(p, size);
+	return (p);
 }

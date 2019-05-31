@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 11:49:50 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/31 12:22:32 by lkhuvhe          ###   ########.fr       */
+/*   Created: 2019/05/31 09:51:00 by lkhuvhe           #+#    #+#             */
+/*   Updated: 2019/05/31 12:00:39 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+char	*ft_strnew(size_t size)
 {
-	if (s)
-	ft_putstr(s);
-	ft_putchar('\n');
+	char *p;
+
+	p = (char *)malloc((size + 1) * sizeof(char));
+	if (!p)
+		return (NULL);
+	ft_bzero (p, size);
+	p[size] = '\0';
+	return (p);
 }
