@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:13:34 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/30 10:16:00 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/05/31 15:10:46 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int		ft_atoi(const char *str)
 	sign = 1;
 	res = 0;
 	i = 0;
+	if (ft_strlen(str) >= 19 && ft_strcmp("9223372036854775807", str) < 0)
+		return (-1);
+	else if (ft_strlen(str) >= 20 && ft_strcmp("-9223372036854775808", str) < 0)
+		return (0);
 	while (str[i] == '\t' || str[i] == '\v' || str[i] == ' '
 			|| str[i] == '\r' || str[i] == '\f' || str[i] == '\n')
 		i++;
