@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 11:49:50 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/31 12:22:32 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/01 10:56:03 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	ft_putendl(char const *s)
 {
 	if (s)
-	ft_putstr(s);
-	ft_putchar('\n');
+	{
+		ft_putstr(s);
+		ft_putchar('\n');
+	}
 }

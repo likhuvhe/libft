@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 17:40:03 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/01 10:57:00 by lkhuvhe          ###   ########.fr       */
+/*   Created: 2019/05/31 17:08:40 by lkhuvhe           #+#    #+#             */
+/*   Updated: 2019/06/01 13:44:41 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	unsigned int	l;
+	int				i;
+	char			*new;
+
+	if (!s)
+		return (NULL);
+	l = ft_strlen(s);
+	i = 0;
+	new = (char *)malloc((l + 1) * sizeof(char));
+	if (!new)
+		return (NULL);
+	new[l] = '\0';
+	while (s[i] != '\0')
+	{
+		new[i] = f(s[i]);
+		i++;
+	}
+	return (new);
 }

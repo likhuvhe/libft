@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:13:34 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/31 15:10:46 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/01 15:14:06 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 int		ft_atoi(const char *str)
 {
-	int	sign;
-	int	res;
-	int	i;
+	unsigned int	sign;
+	unsigned int	res;
+	unsigned int	i;
 
 	sign = 1;
 	res = 0;
 	i = 0;
-	if (ft_strlen(str) >= 19 && ft_strcmp("9223372036854775807", str) < 0)
+/*	if (ft_strlen(str) >= 19 && ft_strcmp("9223372036854775807", str) < 0)
 		return (-1);
 	else if (ft_strlen(str) >= 20 && ft_strcmp("-9223372036854775808", str) < 0)
-		return (0);
+		return (0);*/
 	while (str[i] == '\t' || str[i] == '\v' || str[i] == ' '
 			|| str[i] == '\r' || str[i] == '\f' || str[i] == '\n')
 		i++;
@@ -34,7 +34,7 @@ int		ft_atoi(const char *str)
 			sign = -1;
 		i++;
 	}
-	while (ft_isdigit((int)str[i]))
+	while (ft_isdigit((unsigned int)str[i]))
 	{
 		res = res * 10 + str[i] - '0';
 		i++;
