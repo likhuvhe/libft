@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:13:34 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/02 10:29:51 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/04 17:54:30 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ int		ft_atoi(const char *str)
 		i++;
 	}
 	while (ft_isdigit((unsigned int)str[i]))
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
+		res = res * 10 + str[i++] - '0';
 	return (sign * res);
 }

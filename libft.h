@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:02:56 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/02 16:33:24 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/04 17:33:31 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	*ft_memalloc(size_t size);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strnew(size_t size);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strtrim(char const *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
