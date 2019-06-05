@@ -6,42 +6,31 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 07:23:58 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/28 12:58:28 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/05 14:09:44 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int i;
+	unsigned int len_dst;
 	unsigned int length;
 
-	length = ft_strlen(dst);
 	i = 0;
-	while (i < dstsize && dst[i] != '\0')
+	len_dst = ft_strlen(dst);
+	length = ft_strlen(src) + len_dst;
+	while (len_dst > dstsize && dst[i] != '\0')
 	{
-		i++;
-		dstsize++;
+		return (ft_strlen(src) + dstsize);
 	}
-	while (src[i] != '\0' && dstsize-- > 1)
+	while (src[i] != '\0' && dstsize > len_dst + 1)
 	{
-		dst[i] = src[i];
+		dst[len_dst] = src[i];
 		i++;
+		len_dst++;
 	}
-	if (dstsize == 1)
-		dst[i] = '\0';
-	return (i + length);
+	dst[len_dst] = '\0';
+	return (length);
 }
-/*int main()
-{
- 	char a[] = "Hello";
-	char b[] = "The";
-	 unsigned int r;
-
-	r = ft_strlcat(a, b, 4);
-	printf("%d", r);
-	return (0);
-}*/
