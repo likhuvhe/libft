@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 13:29:53 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/05 14:17:00 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/06 11:40:26 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ char	*ft_strtrim(char const *s)
 	c = 0;
 	while (l <= len)
 	{
-		copy[c] = s[l];
-		c++;
-		l++;
+		copy[c++] = s[l++];
 	}
 	copy[c] = '\0';
 	return (copy);
