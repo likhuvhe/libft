@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 13:47:11 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/07 16:54:46 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/07 17:35:04 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ static char		*ft_word(const char *str, char c, int *i)
 	char *p;
 	int j;
 
-	if (!(p = (char*)malloc(ft_strlen(str) * sizeof(p))))
+	if (!str && !c)
+		return (NULL);
+	if (!(p = (char*)malloc(ft_strlen(str) + 1 * sizeof(char))))
 		return (NULL);
 	j = 0;
 	while (str[*i] != '\0' && str[*i] != c)
@@ -62,7 +64,7 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	k = 0;
 	nwrd = ft_wordcount(s, c);
-	if (!(array = (char **)malloc((nwrd + 2) * sizeof(char))))
+	if (!(array = (char **)malloc((nwrd + 2) * sizeof(array))))
 		return (NULL);
 	while (s[i] == c && s[i] != '\0')
 		i++;
@@ -71,6 +73,6 @@ char	**ft_strsplit(char const *s, char c)
 		array[k] = ft_word(s, c, &i);
 		k++;
 	}
-//	array[k] = '\0';
+	array[k] = NULL;
 	return (array);
 }
