@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:02:56 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/06 13:11:01 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/07 15:51:38 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ int		ft_isprint(int c);
 int		ft_isascii(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+char	**ft_strsplit(char const *s, char c);
 
 #endif
