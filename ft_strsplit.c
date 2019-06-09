@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 13:47:11 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/07 17:35:04 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/09 15:49:57 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static int		ft_wordcount(const char *str, char c)
 
 static char		*ft_word(const char *str, char c, int *i)
 {
-	char *p;
-	int j;
+	char	*p;
+	int		j;
 
 	if (!str && !c)
 		return (NULL);
@@ -54,7 +54,7 @@ static char		*ft_word(const char *str, char c, int *i)
 	return (p);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	int		i;
 	int		k;
