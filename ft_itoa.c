@@ -6,14 +6,13 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 11:05:37 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/06 18:49:23 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/11 10:44:33 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int		ft_intlen(int n)
+static int		ft_intlen(int n)
 {
 	int		len;
 
@@ -33,7 +32,7 @@ int		ft_intlen(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*str;
 	int		len;

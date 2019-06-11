@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/01 13:07:58 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/11 16:26:21 by lkhuvhe          ###   ########.fr       */
+/*   Created: 2019/06/11 14:05:54 by lkhuvhe           #+#    #+#             */
+/*   Updated: 2019/06/11 16:20:20 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	unsigned int	i;
-	unsigned int	l;
-	char			*new;
+	t_list	*head;
 
-	if (!s)
+	head = (t_list*)malloc(sizeof(t_list));
+	if (!head)
 		return (NULL);
-	i = 0;
-	l = ft_strlen(s);
-	new = (char *)malloc((l + 1) * sizeof(char));
-	if (!new)
-		return (NULL);
-	new[l] = '\0';
-	while (s[i] != '\0')
+	if (content)
 	{
-		new[i] = f(i, s[i]);
-		i++;
+		if (!(head->content = (void*)malloc(content_size)))
+			return (NULL);
+		ft_memcpy(head->content, content, content_size);
+		head->content_size = content_size;
 	}
-	return (new);
+	else
+	{
+		head->content = NULL;
+		head->content_size = 0;
+	}
+	head->next = NULL;
+	return (head);
 }
