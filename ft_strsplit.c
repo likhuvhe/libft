@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 13:47:11 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/06/10 11:25:59 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/14 11:19:33 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ char			**ft_strsplit(char const *s, char c)
 	int		nwrd;
 	char	**array;
 
+	if (!s && !c)
+		return (NULL);
+	if (s == 0)
+		return (0);
 	i = 0;
 	k = 0;
 	nwrd = ft_wordcount(s, c);
