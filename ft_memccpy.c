@@ -6,7 +6,7 @@
 /*   By: lkhuvhe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:55:19 by lkhuvhe           #+#    #+#             */
-/*   Updated: 2019/05/20 14:59:01 by lkhuvhe          ###   ########.fr       */
+/*   Updated: 2019/06/17 11:48:09 by lkhuvhe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 
 	from = (char*)src;
 	to = (char*)dest;
-	while (n--)
+	while (n-- > 0)
 	{
 		if (*from == (char)c)
 		{
